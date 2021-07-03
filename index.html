@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badlands</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: yellowgreen;
+        }
+        #divA{
+            width: 500px;
+            height: 600px;
+            background-color: teal;
+            margin: auto;
+        }
+        
+        button{
+            width: 350px;
+            height: 50px;
+            background-color: turquoise;
+            margin: auto;
+            border: yellow;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 15pt;
+            margin-top: 4%;
+            margin-left: 15%;
+        }
+        button:hover{
+            background-color: yellow;
+        }
+        #imagem{
+            width: 480px;
+            height: 500px;
+            margin-left: 8px;
+            margin-top: 5px;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            margin-left: 10px;
+            margin-top: 35px;
+        }
+        #h1{
+            text-align: center;
+            font-family: fantasy;
+        }
+    </style>
+</head>
+<body>
+    <audio id="bgMusic" loop autoplay>
+        <source src="/src/123.ogg" type="audio/ogg">
+      Your browser does not support the audio element.
+    </audio>
+    <div id="divA">
+        <img id="imagem" src="./src/bad1.jpg" alt="Image not Found!">
+        <button id="button">
+            <strong>Lets Drink!</strong>
+        </button>
+        <h1 id="h1"></h1>
+    </div>
+
+    <img id="sprite" src="./src/sprite.jfif" alt="Image not Found!">
+        
+    
+</body>
+
+<script>
+    let button = document.getElementById('button');
+    var count = 0;
+    var img = document.getElementById('imagem');
+
+    button.addEventListener("click", () => {
+        let teste = document.createElement('img');
+        teste.src = "./src/sprite.jfif";
+        count ++;
+        let h1 = document.getElementById('h1');
+        h1.textContent = count+"%";
+        if (count == 8 || count == 16 || count == 24 || count == 36 || count == 40 || count == 48 || count == 56 || count == 64 || 
+                count == 72 || count == 80 || count == 88 || count == 94 || count == 100) {
+                document.body.appendChild(teste);
+            }
+
+        if (count > 0 && count < 25) {
+            img.src = "./src/bad2.jpg";
+        }
+        else if (count > 25 && count < 50) {
+            img.src = "./src/bad3.jpg";
+        }
+        else if (count > 50 && count < 75) {
+            img.src = "./src/bad4.jfif";
+        }
+        else if (count > 75 && count < 99) {
+            img.src = "./src/bad5.jpg";
+        }
+        else if(count == 100){
+            window.location.href = "./badlandsGorfing.html";
+        }
+        
+        console.log(count);
+    })
+
+</script>
+
+</html>
