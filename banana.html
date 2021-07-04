@@ -9,7 +9,7 @@
         body{
             width: 100vw;
             height: 100vh;
-            background-color: rgb(255, 255, 74);
+            background-color: yellowgreen;
         }
         #divA{
             width: 500px;
@@ -52,19 +52,19 @@
 </head>
 <body>
     <audio id="bgMusic" loop autoplay>
-        <source src="/src/123.ogg" type="audio/ogg">
+        <source src="/src/456.ogg" type="audio/ogg">
       Your browser does not support the audio element.
     </audio>
     <audio id="omg" src="./src/omg.mp3"></audio>
     <div id="divA">
         <img id="imagem" src="./src/bad1.jpg" alt="Image not Found!">
         <button id="button">
-            <strong>Lets eat Bananas First!</strong>
+            <strong>Now, We can Drink!</strong>
         </button>
         <h1 id="h1"></h1>
     </div>
 
-    <img id="sprite" src="./src/banana.jfif" alt="Image not Found!">
+    <img id="sprite" src="./src/sprite.jfif" alt="Image not Found!">
         
     
 </body>
@@ -76,9 +76,10 @@
     var audio = document.getElementById('bgMusic');
     audio.volume = 0.1;
     button.addEventListener("click", () => {
+        
         let teste = document.createElement('img');
-        teste.src = "./src/banana.jfif";
-        count += 2;
+        teste.src = "./src/sprite.jfif";
+        count += 4;
         let h1 = document.getElementById('h1');
         h1.textContent = count+"%";
         if (count == 8 || count == 16 || count == 24 || count == 36 || count == 40 || count == 48 || count == 56 || count == 64 || 
@@ -87,21 +88,21 @@
             }
 
         if (count > 0 && count < 25) {
-            img.src = "./src/badBanana1.png";
+            img.src = "./src/bad2.jpg";
         }
         else if (count > 25 && count < 50) {
-            img.src = "./src/badBanana2.png";
+            img.src = "./src/bad3.jpg";
         }
         else if (count > 50 && count < 75) {
-            img.src = "./src/badBanana3.png";
+            img.src = "./src/bad4.jfif";
             let omg = document.getElementById('omg');
             omg.play();
         }
         else if (count > 75 && count < 99) {
-            img.src = "./src/badBanana4.png";
+            img.src = "./src/bad5.jpg";
         }
         else if(count == 100){
-            window.location.href = "./banana.html";
+            window.location.href = "./badlandsGorfing.html";
         }
         
         console.log(count);
